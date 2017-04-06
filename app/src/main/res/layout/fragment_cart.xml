@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/cart_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/cart_tv_total"
+            android:layout_marginLeft="8dp"
+            android:textColor="@color/seek_bar_text"
+            android:textSize="18sp"
+            android:gravity="center_vertical"
+            android:layout_weight="2.5"
+            android:layout_width="1dp"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/cart_btn_commit"
+            android:text="结算"
+            android:textSize="14sp"
+            android:background="#76EE00"
+            android:layout_weight="1"
+            android:layout_width="1dp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</RelativeLayout>

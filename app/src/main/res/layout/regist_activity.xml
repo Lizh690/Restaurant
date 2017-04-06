@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/regist_activity_bg"
+    >
+
+    <include layout="@layout/include_tool_bar"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:background="#f5efef">
+
+        <EditText
+            android:id="@+id/addname_tv"
+            android:layout_alignParentLeft="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="昵称"
+            />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f5efef"
+        android:layout_margin="3dp">
+
+        <EditText
+            android:id="@+id/addpass_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="密码"
+            />
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f5efef"
+        android:layout_margin="3dp">
+
+        <EditText
+            android:id="@+id/addpassagain_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="确认密码"
+            android:textSize="20sp"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:background="#d4cbcb">
+
+        <EditText
+            android:id="@+id/address_et"
+            android:layout_width="match_parent"
+            android:gravity="left|top"
+            android:layout_height="100dp"
+            android:hint="请填写您的详细地址"
+            android:inputType="textMultiLine"
+            android:background="#f5efef"
+            />
+    </android.support.v7.widget.CardView>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f5efef"
+        android:layout_margin="3dp">
+
+        <EditText
+            android:id="@+id/login_input_phone_et"
+            android:layout_below="@id/address_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numeric="integer"
+            android:hint="手机号"
+            />
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="3dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/login_input_code_et"
+                android:layout_alignParentLeft="true"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:hint=" 填写验证码"
+                android:singleLine="true"
+                android:background="#f5efef"
+                />
+
+
+            <Button
+                android:id="@+id/login_request_code_btn"
+                android:layout_alignParentRight="true"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="获取验证码"
+                android:background="#f5e4e4"
+                />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <Button
+        android:id="@+id/login_commit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textSize="20sp"
+        android:text="注         册"
+        android:background="#666fd4"
+        />
+
+</LinearLayout>

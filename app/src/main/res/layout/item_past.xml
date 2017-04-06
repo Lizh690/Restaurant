@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#d4dbef"
+    android:layout_marginBottom="1dp">
+
+    <ImageView
+        android:id="@+id/past_item_iv"
+        android:layout_alignParentLeft="true"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_margin="10dp"
+        android:src="@mipmap/icon"
+
+        />
+    <TextView
+        android:id="@+id/past_tv_id"
+        android:layout_toRightOf="@id/past_item_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="2016001"
+        android:textSize="25dp"/>
+
+    <TextView
+        android:id="@+id/past_tv_state"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="15dp"
+        android:text="订单以完成"
+        android:textSize="13dp"
+        />
+    <TextView
+        android:id="@+id/past_tv_time"
+        android:layout_below="@id/past_tv_id"
+        android:layout_toRightOf="@id/past_item_iv"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2016-10-04 15:01:22"/>
+
+    <TextView
+        android:id="@+id/past_tv_pay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/past_tv_state"
+        android:layout_marginTop="23dp"
+        android:layout_marginRight="30dp"
+        android:text="￥70.00"
+        android:textSize="20dp"
+        />
+
+
+</RelativeLayout>

@@ -1,0 +1,51 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.lee.learnmaterialdesign.MainActivity">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/person"
+            android:icon="@drawable/beef"
+            android:title="登录"/>
+
+        <item
+            android:id="@+id/chagemessage"
+            android:icon="@drawable/add_round"
+            android:title="更改个人信息"
+            />
+
+
+        <item
+            android:id="@+id/main_menu"
+            android:icon="@drawable/menu_navi"
+            android:title="菜单" />
+        <item
+            android:id="@+id/lastorder"
+            android:icon="@drawable/back"
+            android:title="历史订单"
+            />
+
+        <item
+            android:id="@+id/cart"
+            android:icon="@drawable/cart"
+            android:title="已选菜品"/>
+
+    </group>
+
+    <item
+        android:id="@+id/qrcode"
+        android:icon="@drawable/qrcode"
+        android:title="二维码"
+        android:visible="true"/>
+    <item
+        android:id="@+id/quit_user"
+        android:icon="@drawable/cart"
+        android:title="退出登录"
+        />
+
+    <item
+        android:id="@+id/about_us"
+        android:icon="@drawable/info"
+        android:title="关于我们"
+        />
+</menu>

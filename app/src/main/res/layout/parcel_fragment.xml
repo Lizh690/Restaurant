@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_activity_bg">
+
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/parcel_cv_1"
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <EditText
+            android:id="@+id/parcel_et_name"
+            android:hint="昵称"
+            android:textColor="#000000"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/parcel_cv_2"
+        android:layout_below="@+id/parcel_cv_1"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/parcel_et_phone"
+            android:hint="联系方式"
+            android:textSize="15sp"
+            android:textColor="#000000"
+            android:focusable="false"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/parcel_cv_3"
+        android:layout_below="@+id/parcel_cv_2"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/parcel_et_address"
+            android:textSize="15sp"
+            android:minLines="4"
+            android:hint="地址"
+            android:gravity="left|top"
+            android:layout_margin="6dp"
+            android:textColorHint="#666666"
+            android:inputType="textMultiLine"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="80dp" />
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/parcel_cv_4"
+        android:layout_below="@+id/parcel_cv_3"
+        android:layout_margin="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <RelativeLayout
+            android:id="@+id/parcel_rl_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="支付方式"
+                android:textSize="15sp"
+                android:textColor="#000000"
+                android:layout_margin="6dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/parcel_tv_pay"
+                android:text="在线支付"
+                android:textSize="15sp"
+                android:textColor="#333333"
+                android:layout_margin="6dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/parcel_iv_arrow1"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/parcel_iv_arrow1"
+                android:layout_marginRight="2dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/arrow_right"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_width="16dp"
+                android:layout_height="20dp" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/parcel_cv_5"
+        android:layout_below="@+id/parcel_cv_4"
+        android:layout_margin="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        >
+
+        <RelativeLayout
+            android:id="@+id/parcel_rl_invoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="是否开具发票"
+                android:textSize="15sp"
+                android:textColor="#000000"
+                android:layout_margin="6dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="是"
+                android:id="@+id/parcel_tv_invoince"
+                android:textSize="15sp"
+                android:textColor="#333333"
+                android:layout_margin="6dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/parcel_iv_arrow2"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/parcel_iv_arrow2"
+                android:layout_marginRight="2dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/arrow_right"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_width="16dp"
+                android:layout_height="20dp" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/parcel_cv_6"
+        android:layout_below="@id/parcel_cv_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp">
+
+        <EditText
+            android:id="@+id/parcel_et_mark"
+            android:textSize="15sp"
+            android:minLines="4"
+            android:hint="备注"
+            android:gravity="left|top"
+            android:layout_margin="6dp"
+            android:textColorHint="#666666"
+            android:inputType="textMultiLine"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
+
+    </android.support.v7.widget.CardView>
+
+
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/parcel_tv_total"
+            android:layout_marginLeft="8dp"
+            android:textColor="@color/seek_bar_text"
+            android:textSize="16sp"
+            android:gravity="center_vertical"
+            android:layout_weight="2.5"
+            android:layout_width="1dp"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/parcel_btn_pay"
+            android:text="支付"
+            android:textSize="16sp"
+            android:background="#76EE00"
+            android:layout_weight="1"
+            android:layout_width="1dp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</RelativeLayout>

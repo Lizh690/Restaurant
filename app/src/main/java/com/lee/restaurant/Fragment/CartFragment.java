@@ -23,6 +23,7 @@ import com.lee.restaurant.Activity.BalanceActivity;
 import com.lee.restaurant.Activity.CartActivity;
 import com.lee.restaurant.Activity.DetialActivity;
 import com.lee.restaurant.Activity.MainActivity;
+import com.lee.restaurant.Activity.PayActivity;
 import com.lee.restaurant.Model.Dish;
 import com.lee.restaurant.Model.Dishes;
 import com.lee.restaurant.R;
@@ -42,6 +43,7 @@ public class CartFragment extends Fragment implements View.OnClickListener {
     TextView textViewTotal;
     Button btnCommit;
     CartActivity cartActivity;
+    java.text.NumberFormat format;
 
     @Nullable
     @Override
@@ -54,7 +56,9 @@ public class CartFragment extends Fragment implements View.OnClickListener {
         btnCommit = (Button) view.findViewById(R.id.cart_btn_commit);
         btnCommit.setOnClickListener(this);
 
-        textViewTotal.setText(updateTotalPrice());
+        format = java.text.NumberFormat.getCurrencyInstance();
+
+        textViewTotal.setText(format.format(updateTotalPrice()));
 
         recyclerView = (RecyclerView) view.findViewById(R.id.cart_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -68,13 +72,11 @@ public class CartFragment extends Fragment implements View.OnClickListener {
         switch (view.getId()){
             case R.id.cart_btn_commit:
                 if(IsHaveUser()){       //如果已经登录账号
-
-                    Intent intent = new Intent(getActivity(), BalanceActivity.class);
-                    intent.putExtra("totalPrice", updateTotalPrice());
-                    intent.putExtra("tableNo", getActivity().getIntent().getStringExtra("tableNo"));
+                    Intent intent = new Intent(getActivity(), PayActivity.class);
+                    intent.putExtra("name","堂食");
+                    intent.putExtra("price", updateTotalPrice());
+                    intent.putExtra("desc", "桌号:" + getActivity().getIntent().getStringExtra("tableNo"));
                     startActivity(intent);
-                    getActivity().finish();
-
                 }else
                 {
                     if (!MainActivity.QRorNot) { // 未扫描二维码
@@ -101,7 +103,6 @@ public class CartFragment extends Fragment implements View.OnClickListener {
                         intent.putExtra("totalPrice", updateTotalPrice());
                         intent.putExtra("tableNo", getActivity().getIntent().getStringExtra("tableNo"));
                         startActivity(intent);
-                        getActivity().finish();
                     }
                 }
                 break;
@@ -150,16 +151,15 @@ public class CartFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    private String updateTotalPrice(){
+    private double updateTotalPrice(){
         if (!MainActivity.cart.isEmpty()){
             double total = 0;
-            for (Dish dish:MainActivity.cart.values()){
+            for (Dish dish:MainActivity.cart.values()) {
                 total += dish.getCount() * Float.valueOf(dish.getPrice());
             }
-            java.text.NumberFormat format = java.text.NumberFormat.getCurrencyInstance();
-            return format.format(total);
+            return total;
         }
-        return null;
+        return -1;
     }
 
     class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
@@ -235,7 +235,7 @@ public class CartFragment extends Fragment implements View.OnClickListener {
                     case R.id.cart_tv_add:
                         MainActivity.cart.get(MainActivity.cartList.get(position)).setCount(MainActivity.cart.get(MainActivity.cartList.get(position)).getCount() + 1);
                         notifyDataSetChanged();
-                        textViewTotal.setText(updateTotalPrice());
+                        textViewTotal.setText(format.format(updateTotalPrice()));
                         break;
                     case R.id.cart_tv_minus:
                         int count = MainActivity.cart.get(MainActivity.cartList.get(position)).getCount();
@@ -250,7 +250,7 @@ public class CartFragment extends Fragment implements View.OnClickListener {
                             MainActivity.cart.get(MainActivity.cartList.get(position)).setCount(count);
                         }
                         notifyDataSetChanged();
-                        textViewTotal.setText(updateTotalPrice());
+                        textViewTotal.setText(format.format(updateTotalPrice()));
                         break;
                 }
             }

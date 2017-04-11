@@ -63,6 +63,7 @@ public class DetialActivity extends BaseActivity implements View.OnClickListener
                 finish();
             }
         });
+        getSupportActionBar().setTitle("菜品详情");
 
         fab.setOnClickListener(this);
 

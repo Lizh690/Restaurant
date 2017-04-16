@@ -4,8 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <include layout="@layout/include_tool_bar"/>
-
     <TextView
         android:text="支付成功"
         android:background="#ee4000"

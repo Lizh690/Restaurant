@@ -19,7 +19,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.lee.restaurant.Activity.BalanceActivity;
 import com.lee.restaurant.Activity.CartActivity;
 import com.lee.restaurant.Activity.DetialActivity;
 import com.lee.restaurant.Activity.MainActivity;
@@ -99,9 +98,10 @@ public class CartFragment extends Fragment implements View.OnClickListener {
                         });
                         builder.show();
                     } else {
-                        Intent intent = new Intent(getActivity(), BalanceActivity.class);
-                        intent.putExtra("totalPrice", updateTotalPrice());
-                        intent.putExtra("tableNo", getActivity().getIntent().getStringExtra("tableNo"));
+                        Intent intent = new Intent(getActivity(),PayActivity.class);
+                        intent.putExtra("name","堂食");
+                        intent.putExtra("price", updateTotalPrice());
+                        intent.putExtra("desc", "桌号:" + getActivity().getIntent().getStringExtra("tableNo"));
                         startActivity(intent);
                     }
                 }
@@ -130,12 +130,13 @@ public class CartFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == 2){
-            Intent intent = new Intent(getActivity(),BalanceActivity.class);
+            Intent intent = new Intent(getActivity(),PayActivity.class);
             String QRResult = data.getStringExtra("QRResult");
             if (QRResult.startsWith("http://123.206.221.174/")){
                 String tableNo = QRResult.split("tableNo=")[1];
-                intent.putExtra("totalPrice",updateTotalPrice());
-                intent.putExtra("tableNo",tableNo);
+                intent.putExtra("name","堂食");
+                intent.putExtra("price", updateTotalPrice());
+                intent.putExtra("desc", "桌号:" + tableNo);
                 startActivity(intent);
             }else{
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
